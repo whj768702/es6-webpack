@@ -1,4 +1,4 @@
-export default class Person{
+class Person{
     constructor(name, age){
         this.name = name;
         this.age = age;
@@ -9,4 +9,4 @@ export default class Person{
     }
 }
 
-// export default Person;
+export default Person;
