@@ -1,7 +1,9 @@
 import '../node_modules/reflect-metadata/Reflect.js';
 import '../node_modules/zone.js/lib/zone.js';
 import '../node_modules/es6-shim';
-import {Component, View, bootstrap} from '../node_modules/angular2/angular2';
+// import {Component, View, bootstrap} from '../node_modules/angular2/angular2';
+import {View, bootstrap} from '../node_modules/angular2/angular2';
+import {Component} from '../node_modules/angular2/core';
 
 @Component({
     selector: 'my-app'
