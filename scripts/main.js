@@ -1,5 +1,7 @@
-import Person from './Person.js';
+import {MyAppComponent} from "./hello.js";
 
-var p = new Person('张三', '20');
+// import {HelloTemplateComponent} from "./components/helloTemplate/helloTemplate.js";
 
-document.write(p.say());
+import {Component, View, bootstrap} from '../node_modules/angular2/angular2';
+
+bootstrap(MyAppComponent);
