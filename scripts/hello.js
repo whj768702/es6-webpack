@@ -1,17 +1,13 @@
-import '../node_modules/reflect-metadata/Reflect.js';
-import '../node_modules/zone.js/lib/zone.js';
-import '../node_modules/es6-shim';
-// import {Component, View, bootstrap} from '../node_modules/angular2/angular2';
-import {View, bootstrap} from '../node_modules/angular2/angular2';
-import {Component} from '../node_modules/angular2/core';
+import { Component, View } from 'angular2/core';
 
-@Component({
-    selector: 'my-app'
-})
+// @Component({
+//     selector: 'my-app',
+//     template: '<h1>helo {{name}}</h1>'
+// })
 
-@View({
-    template: '<h1>Hello {{ name }}</h1>'
-})
+ // @View({
+ //     template: '<h1>Hello {{ name }}</h1>'
+ // })
 
 class MyAppComponent {
     constructor() {
@@ -19,4 +15,15 @@ class MyAppComponent {
     }
 }
 
-bootstrap(MyAppComponent);
+MyAppComponent.annotations = [
+    new Component({
+        selector: 'my-app',
+    }),
+    new View({
+        template: '<h1>hello {{name}}</h1>'
+    })
+];
+
+export {MyAppComponent};
+
+

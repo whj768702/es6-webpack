@@ -1,6 +1,7 @@
-import {MyAppComponent} from "./hello.js";
+import 'reflect-metadata';
+import {bootstrap} from 'angular2/platform/browser';
+import {MyAppComponent} from './hello';
 
-// import {Component, View, bootstrap} from '../node_modules/angular2/angular2';
-import {Component} from '../node_modules/angular2/core';
-
-bootstrap(MyAppComponent);
+document.addEventListener('DOMContentLoaded', () => {
+    bootstrap(MyAppComponent);
+});
