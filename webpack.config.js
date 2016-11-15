@@ -9,10 +9,12 @@ module.exports = {
     module: {
         loaders: [
             {
-                loader: 'babel-loader',
+                loader: 'babel',
                 test: path.join(__dirname, 'scripts'),
                 query: {
-                    presets: 'es2015'
+                    cacheDirectory: true,
+                    plugins: ['transform-decorators-legacy'],
+                    presets: ['es2015', 'stage-0']
                 }
             }
         ]
