@@ -7,10 +7,11 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {MyAppComponent} from './hello';
+import {Myworld} from './world';
 
 @NgModule({
     imports: [BrowserModule],
-    declarations: [MyAppComponent],
+    declarations: [MyAppComponent,Myworld],
     bootstrap: [MyAppComponent]
 })
 class AppModule{}
