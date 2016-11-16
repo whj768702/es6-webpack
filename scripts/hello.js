@@ -1,11 +1,8 @@
-import { Component, View } from 'angular2/core';
+import { Component} from '@angular/core';
 
 @Component({
-    selector: 'my-app'
-})
-
-@View({
-    template: '<h1>Hello123 {{ name }}</h1>'
+    selector: 'my-app',
+    template: '<h1>Hello {{ name }}</h1>'
 })
 
 class MyAppComponent {
@@ -13,15 +10,6 @@ class MyAppComponent {
         this.name = 'World';
     }
 }
-
-// MyAppComponent.annotations = [
-//     new Component({
-//         selector: 'my-app',
-//     }),
-//     new View({
-//         template: '<h1>hello {{name}}</h1>'
-//     })
-// ];
 
 export {MyAppComponent};
 

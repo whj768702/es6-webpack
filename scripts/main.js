@@ -1,13 +1,18 @@
+
 import 'reflect-metadata';
-import {bootstrap} from 'angular2/platform/browser';
-// import {NgModule} from 'angular2/core';
+import 'zone.js';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+
 import {MyAppComponent} from './hello';
 
-document.addEventListener('DOMContentLoaded', () => {
-    bootstrap(MyAppComponent);
-});
-// @NgModule({
-//     imports: [MyAppComponent]
-// });
+@NgModule({
+    imports: [BrowserModule],
+    declarations: [MyAppComponent],
+    bootstrap: [MyAppComponent]
+})
+class AppModule{}
 
-// bootstrap(MyAppComponent);
+platformBrowserDynamic().bootstrapModule(AppModule);
