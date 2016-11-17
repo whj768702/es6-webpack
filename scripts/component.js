@@ -2,8 +2,8 @@ import { Component} from '@angular/core';
 
 class Hero{
     constructor(id, name){
-        this.id = id;
-        this.name = name;
+        this.id = id || null;
+        this.name = name || null;
     }
 }
 
@@ -30,10 +30,12 @@ const HEROES =[
                 <span class="badge">{{hero.id}}</span>{{hero.name}}
             </li> 
         </ul>
+        <div *ngIf="selectedHero">
         <h2>{{selectedHero.name}} details!</h2>
-        <div>
-            <label>id:{{selectedHero.id}}</label>
-            <input [(ngModel)]="selectedHero.name" placeholder="name"/>
+            <div>
+                <label>id:{{selectedHero.id}}</label>
+                <input [(ngModel)]="selectedHero.name" placeholder="name"/>
+            </div>
         </div>`,
     styles: [`
         .selected {
@@ -89,9 +91,8 @@ const HEROES =[
 class AppComponent {
     constructor() {
         this.title = 'Tour of Heroes';
-        // this.hero = new Hero(1, 'windstorm');
         this.heroes = HEROES;
-        this.selectedHero = new Hero(1, 'windstorm');
+        this.selectedHero;
     }
     onSelect(hero){
         this.selectedHero = hero;
