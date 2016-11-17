@@ -26,14 +26,14 @@ const HEROES =[
         <h1>{{title}}</h1>
         <h2>My Heroes</h2>
         <ul class="heroes">
-            <li *ngFor="let hero of heroes">
+            <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
                 <span class="badge">{{hero.id}}</span>{{hero.name}}
             </li> 
         </ul>
-        <h2>{{hero.name}} details!</h2>
+        <h2>{{selectedHero.name}} details!</h2>
         <div>
-            <label>id:{{hero.id}}</label>
-            <input [(ngModel)]="hero.name" placeholder="name"/>
+            <label>id:{{selectedHero.id}}</label>
+            <input [(ngModel)]="selectedHero.name" placeholder="name"/>
         </div>`,
     styles: [`
         .selected {
@@ -89,8 +89,12 @@ const HEROES =[
 class AppComponent {
     constructor() {
         this.title = 'Tour of Heroes';
-        this.hero = new Hero(1, 'windstorm');
+        // this.hero = new Hero(1, 'windstorm');
         this.heroes = HEROES;
+        this.selectedHero = new Hero(1, 'windstorm');
+    }
+    onSelect(hero){
+        this.selectedHero = hero;
     }
 }
 
